@@ -7,4 +7,4 @@ def home(request):
     return render(request, 'blog/index.html')
     
 def blog(request):
-    return HttpResponse('Blog')
+    return render(request, 'Blog/blog.html')
