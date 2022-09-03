@@ -16,17 +16,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-<<<<<<< HEAD
-=======
+
 from django.conf import settings
 from django.conf.urls.static import static
->>>>>>> 501aeba684a9ab171a52d8e35e01436d6331eb1e
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls'))
-<<<<<<< HEAD
-]
-=======
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
->>>>>>> 501aeba684a9ab171a52d8e35e01436d6331eb1e
+
