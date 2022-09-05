@@ -7,8 +7,9 @@ def home(request):
     return render(request, 'blog/index.html')
     
 def blog(request):
-<<<<<<< HEAD
-    return HttpResponse('Blog')
-=======
-    return render(request, 'Blog/blog.html')
->>>>>>> 501aeba684a9ab171a52d8e35e01436d6331eb1e
+    return render(request, 'blog/blog.html')
+
+
+def contato(request):
+    return render(request, 'blog/blog.html')
+
