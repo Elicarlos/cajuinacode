@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls'))
+    path('', include('blog.urls')),
+    path('froala_editor/', include('froala_editor.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
