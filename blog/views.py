@@ -1,11 +1,15 @@
+
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from . models import BlogModel
+from . forms import CommentForm
 
 # Create your views here.
 
 def home(request):
-    context = {'posts': BlogModel.objects.all()}
+    context = {
+        'posts': BlogModel.objects.all()
+    }
     return render(request, 'blog/index.html', context)
 
 def blog(request):
@@ -21,4 +25,9 @@ def register_view(request):
 
 def contato(request):
     return render(request, 'blog/blog.html')
+
+def post_detail(request, slug): 
+    post = get_object_or_404(BlogModel, slug=slug)
+    form = CommentForm()
+    return render(request, 'blog/post.html', {'post': post, 'form': form })
 
