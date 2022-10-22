@@ -34,6 +34,8 @@
                                 <a href="#!">Start Bootstrap</a>
                                 <!-- on August 24, 2022 -->
                                 {{ post.create_at|date:'d-M-Y'}}
+
+                                {{ post.category}}
                             </span>
                         </div>
                     </div>
@@ -73,8 +75,15 @@
                 </div>
             </div>
 
+            {% for comment in post.comments.all %}
+                {{ comment.name }} -- {{ comment.create_at|timesince}} atrás
+                {{ comment.body }}
+            {% endfor %}
+
             <form action="" method="post">
+                {% csrf_token %}
                 {{ form.as_p }}
+                <button class="succes">Enviar</button>
             </form>
         </article>
         {% endblock %}
